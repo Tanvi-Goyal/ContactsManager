@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "blocked_contacts")
 data class Contact(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val cNo: Long,
+    @PrimaryKey
+    val id: String ,
+    val cNo: String,
     val cName: String = ""
 )
