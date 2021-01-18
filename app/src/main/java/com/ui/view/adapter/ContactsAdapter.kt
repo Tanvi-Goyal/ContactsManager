@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.contactsmanager.data.entities.Contact
 import com.contactsmanager.databinding.ItemContactBinding
 
-class ContactsAdapter() : RecyclerView.Adapter<ContactsAdapter.MyViewHolder>() {
+class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.MyViewHolder>() {
 
     private var itemList = ArrayList<Contact>()
+    var onItemClick: ((Contact) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding : ItemContactBinding = ItemContactBinding.inflate(
@@ -30,14 +31,25 @@ class ContactsAdapter() : RecyclerView.Adapter<ContactsAdapter.MyViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class MyViewHolder(private val itemContactBinding: ItemContactBinding) : RecyclerView.ViewHolder(
-        itemContactBinding.root
-    ) {
+    inner class MyViewHolder(private val itemContactBinding: ItemContactBinding) :
+        RecyclerView.ViewHolder(itemContactBinding.root) {
+
+        init {
+
+        }
+
         fun bind(contact: Contact) {
             itemContactBinding.contact = contact
             itemContactBinding.executePendingBindings()
 
             itemContactBinding.nameIcon.letter = contact.cName
+
+        }
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick?.invoke(itemList[adapterPosition])
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ import com.contactsmanager.data.entities.Contact
 
 @Database(
     entities = [Contact::class],
-    version = 14,
+    version = 1,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

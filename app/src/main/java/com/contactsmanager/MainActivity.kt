@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                             )
 
                             Log.e("Name ===>", "$name -> $phoneNumValue")
-                            contactsList.add(Contact(id, phoneNumValue, name))
+                            contactsList.add(Contact(phoneNumValue, name))
                         }
                     }
 
