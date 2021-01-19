@@ -89,7 +89,6 @@ class ContactsFragment : Fragment() {
         builder.show()
     }
 
-
     private fun isValidMobile(phone: String): Boolean {
         return Patterns.PHONE.matcher(phone).matches()
     }
