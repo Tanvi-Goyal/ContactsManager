@@ -15,6 +15,7 @@ class PhoneStateReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
 
         context.sendBroadcast(Intent("action"))
+
         try {
             println("Receiver start")
             val state = intent.getStringExtra(TelephonyManager.EXTRA_STATE)
@@ -24,7 +25,7 @@ class PhoneStateReceiver : BroadcastReceiver() {
                 val telephony = context.getSystemService(Context.TELECOM_SERVICE) as TelecomManager
 
                 Log.i("tag", "onReceive: $incomingNumber")
-
+//                val mainFragment = FragmentManager.findFragment<MainFragment>(R.layout.fragment_main)
                 if (incomingNumber.equals("+918527753545")) {
                     telephony.endCall()
                 }
