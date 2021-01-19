@@ -37,9 +37,19 @@ class MainActivity : AppCompatActivity() {
     private fun loadContacts() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
             && checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED
+            && checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED
+            && checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED
+            && checkSelfPermission(Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED
+            && checkSelfPermission(Manifest.permission.ANSWER_PHONE_CALLS) != PackageManager.PERMISSION_GRANTED
         ) {
             requestPermissions(
-                arrayOf(Manifest.permission.READ_CONTACTS),
+                arrayOf(
+                    Manifest.permission.READ_CONTACTS,
+                    Manifest.permission.READ_PHONE_STATE,
+                    Manifest.permission.CALL_PHONE,
+                    Manifest.permission.READ_CALL_LOG,
+                    Manifest.permission.ANSWER_PHONE_CALLS
+                ),
                 PERMISSIONS_REQUEST_READ_CONTACTS
             )
         } else {
@@ -55,12 +65,15 @@ class MainActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         if (requestCode == PERMISSIONS_REQUEST_READ_CONTACTS) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED
+                && grantResults[1] == PackageManager.PERMISSION_GRANTED
+                && grantResults[2] == PackageManager.PERMISSION_GRANTED
+            ) {
                 loadContacts()
             } else {
                 Toast.makeText(
                     this,
-                    "Permission must be granted in order to display contacts information",
+                    "Permissions must be granted in order to display contacts information",
                     Toast.LENGTH_SHORT
                 ).show()
             }
