@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.ui.view.MainFragment"
+        android:name="com.contactsmanager.ui.view.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
 
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/contactsFragment"
-        android:name="com.ui.view.ContactsFragment"
+        android:name="com.contactsmanager.ui.view.ContactsFragment"
         android:label="fragment_contacts"
         tools:layout="@layout/fragment_contacts" />
 </navigation>

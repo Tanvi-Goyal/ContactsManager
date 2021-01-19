@@ -1,4 +1,4 @@
-package com.ui
+package com.contactsmanager.ui
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel

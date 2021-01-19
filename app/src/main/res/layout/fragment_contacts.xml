@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.ui.view.ContactsFragment">
+        tools:context=".ui.view.ContactsFragment">
 
         <TextView
             android:id="@+id/labelAddContact"

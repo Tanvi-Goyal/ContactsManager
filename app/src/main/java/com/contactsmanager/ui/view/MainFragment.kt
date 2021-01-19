@@ -1,4 +1,4 @@
-package com.ui.view
+package com.contactsmanager.ui.view
 
 import android.os.Bundle
 import android.util.Log
@@ -16,10 +16,9 @@ import com.contactsmanager.R
 import com.contactsmanager.data.Resource
 import com.contactsmanager.data.entities.Contact
 import com.contactsmanager.databinding.FragmentMainBinding
-import com.ui.MainViewModel
-import com.ui.view.adapter.ContactsAdapter
+import com.contactsmanager.ui.MainViewModel
+import com.contactsmanager.ui.view.adapter.ContactsAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.log
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {

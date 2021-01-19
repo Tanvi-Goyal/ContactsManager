@@ -1,4 +1,4 @@
-package com.ui.view
+package com.contactsmanager.ui.view
 
 import android.os.Bundle
 import android.util.Patterns
@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.contactsmanager.MainActivity
 import com.contactsmanager.data.entities.Contact
 import com.contactsmanager.databinding.FragmentContactsBinding
-import com.ui.MainViewModel
-import com.ui.view.adapter.ContactsAdapter
+import com.contactsmanager.ui.MainViewModel
+import com.contactsmanager.ui.view.adapter.ContactsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
