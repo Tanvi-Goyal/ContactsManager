@@ -34,10 +34,6 @@ class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.MyViewHolder>() {
     inner class MyViewHolder(private val itemContactBinding: ItemContactBinding) :
         RecyclerView.ViewHolder(itemContactBinding.root) {
 
-        init {
-
-        }
-
         fun bind(contact: Contact) {
             itemContactBinding.contact = contact
             itemContactBinding.executePendingBindings()

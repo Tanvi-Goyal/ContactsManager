@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.contactsmanager.MainActivity
+import com.contactsmanager.R
 import com.contactsmanager.data.entities.Contact
 import com.contactsmanager.databinding.FragmentContactsBinding
 import com.contactsmanager.ui.MainViewModel
@@ -45,12 +46,12 @@ class ContactsFragment : Fragment() {
             val phone = binding.eContactNo.text.toString()
 
             if(phone.isEmpty() || !isValidMobile(phone)) {
-                Toast.makeText(requireContext(), "Please enter the correct phone number to proceed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.enter_correct_number), Toast.LENGTH_SHORT).show()
             } else {
-                if (name.isEmpty()) name = "Unknown"
+                if (name.isEmpty()) name = getString(R.string.default_name)
                 val contact = Contact(phone, name)
                 viewModel.addToBlockedContacts(contact)
-                Toast.makeText(requireContext(), "Number blocked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), getString(R.string.number_blocked), Toast.LENGTH_SHORT).show()
                 binding.eAddName.text?.clear()
                 binding.eContactNo.text?.clear()
             }
@@ -75,11 +76,11 @@ class ContactsFragment : Fragment() {
 
     private fun showAlert(contact: Contact) {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setMessage("Block contact")
+        builder.setMessage(getString(R.string.title_block_contact))
 
         builder.setPositiveButton(android.R.string.yes) { dialog, which ->
             viewModel.addToBlockedContacts(contact)
-            Toast.makeText(requireContext(), "Number blocked", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.number_blocked), Toast.LENGTH_SHORT).show()
         }
 
         builder.setNegativeButton(android.R.string.no) { dialog, which ->

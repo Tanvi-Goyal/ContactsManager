@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Blocked Contacts"
+            android:text="@string/blocked_contacts"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
             android:id="@+id/textNoContacta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="There are no blocked contacts."
+            android:text="@string/there_are_no_blocked_contacts"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

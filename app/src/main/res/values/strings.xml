@@ -2,4 +2,20 @@
     <string name="app_name">ContactsManager</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alert_allow_permissions">Permissions must be granted in order to display contacts information</string>
+    <string name="no_contacts_available">No contacts available</string>
+    <string name="title_unblock_contact">Unblock contact</string>
+    <string name="number_unblocked">Number unblocked</string>
+    <string name="call_alert">Call Alert</string>
+    <string name="title_block_contact">Block contact</string>
+    <string name="number_blocked">Number blocked</string>
+    <string name="enter_correct_number">Please enter the correct phone number to proceed</string>
+    <string name="default_name">Unknown</string>
+    <string name="add_contact_to_block">Add Contact to Block</string>
+    <string name="contact_name_optional">Contact name (Optional)</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="add_to_blocked_contacts">Add to Blocked Contacts</string>
+    <string name="phone_contacts">Phone Contacts</string>
+    <string name="blocked_contacts">Blocked Contacts</string>
+    <string name="there_are_no_blocked_contacts">There are no blocked contacts.</string>
 </resources>

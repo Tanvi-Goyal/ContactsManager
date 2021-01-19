@@ -108,11 +108,11 @@ class MainFragment : Fragment() {
 
     private fun showAlert(contact: Contact) {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setMessage("Unblock contact")
+        builder.setMessage(getString(R.string.title_unblock_contact))
 
         builder.setPositiveButton(android.R.string.yes) { dialog, which ->
             viewModel.deleteContact(contact)
-            Toast.makeText(requireContext(), "Number unblocked", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.number_unblocked), Toast.LENGTH_SHORT).show()
         }
 
         builder.setNegativeButton(android.R.string.no) { dialog, which ->
@@ -174,7 +174,7 @@ class MainFragment : Fragment() {
 
         val builder = NotificationCompat.Builder(requireContext(), CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_background)
-            .setContentTitle("Call Alert")
+            .setContentTitle(getString(R.string.call_alert))
             .setContentText("Call from the blocked contact $number disconnected.")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             // Set the intent that will fire when the user taps the notification

@@ -74,9 +74,7 @@ class MainActivity : AppCompatActivity() {
                 loadContacts()
             } else {
                 Toast.makeText(
-                    this,
-                    "Permissions must be granted in order to display contacts information",
-                    Toast.LENGTH_SHORT
+                    this, getString(R.string.alert_allow_permissions), Toast.LENGTH_SHORT
                 ).show()
             }
         }
@@ -119,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         } else {
-            Toast.makeText(this, "No contacts available", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.no_contacts_available), Toast.LENGTH_SHORT).show()
         }
         cursor.close()
     }
